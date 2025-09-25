@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎹 Piano Player</h1>
+        
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="interactive">Interactive Mode</button>
+            <button class="mode-btn" data-mode="prepared">Prepared Mode</button>
+        </div>
+
+        <div class="controls">
+            <div class="interactive-controls">
+                <button class="control-btn" id="recordBtn">🔴 Start Recording</button>
+                <button class="control-btn" id="downloadBtn" disabled>💾 Download Recording</button>
+            </div>
+            
+            <div class="prepared-controls" style="display: none;">
+                <div class="file-input-wrapper">
+                    <input type="file" id="fileInput" accept=".json">
+                    📁 Load Song
+                </div>
+                <button class="control-btn" id="playBtn" disabled>▶️ Play</button>
+                <button class="control-btn" id="pauseBtn" disabled>⏸️ Pause</button>
+                <button class="control-btn" id="stopBtn" disabled>⏹️ Stop</button>
+                <div class="speed-control">
+                    <span>Speed:</span>
+                    <input type="range" class="speed-slider" id="speedSlider" min="0.5" max="2" step="0.1" value="1">
+                    <span id="speedValue">1.0x</span>
+                </div>
+            </div>
+            
+            <div class="transpose-control">
+                <span>Transpose:</span>
+                <button class="transpose-btn" id="transposeDown">♭</button>
+                <span id="transposeValue">0</span>
+                <button class="transpose-btn" id="transposeUp">♯</button>
+                <button class="transpose-btn" id="resetTranspose">Reset</button>
+            </div>
+            
+            <div class="octave-control">
+                <span>Octave:</span>
+                <button class="octave-btn" id="octaveDown">⬇</button>
+                <span id="octaveValue">0</span>
+                <button class="octave-btn" id="octaveUp">⬆</button>
+                <button class="octave-btn" id="resetOctave">Reset</button>
+            </div>
+        </div>
+
+        <div class="progress-bar" style="display: none;">
+            <div class="progress-fill"></div>
+        </div>
+
+        <div class="status" id="status">Ready to play!</div>
+
+        <div class="piano" id="piano"></div>
+
+        <div class="keyboard-hint">
+            Use your keyboard to play: Q-U for first octave, I-M for second octave, Z-B for third octave<br>
+            <strong>Octave controls:</strong> ⬆/⬇ to shift up/down octaves, Reset to return to original
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
