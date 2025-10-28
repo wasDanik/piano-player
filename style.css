@@ -109,27 +109,22 @@ h1 {
     100% { transform: scale(1); }
 }
 
-.file-input-wrapper {
-    display: inline-block;
-    position: relative;
-    overflow: hidden;
+/* File upload button styling */
+.file-upload-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: #2196F3;
     color: white;
-    padding: 10px 20px;
-    border-radius: 20px;
     cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
 }
 
-.file-input-wrapper:hover {
+.file-upload-btn:hover {
     background: #1976D2;
-    transform: translateY(-1px);
 }
 
-.file-input-wrapper input[type=file] {
-    position: absolute;
-    left: -9999px;
+.file-upload-btn input[type="file"] {
+    display: none;
 }
 
 .speed-control {

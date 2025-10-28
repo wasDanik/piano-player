@@ -103,21 +103,14 @@ class PianoPlayer {
         document.getElementById('pauseBtn').addEventListener('click', () => this.pauseSong());
         document.getElementById('stopBtn').addEventListener('click', () => this.stopSong());
         
+        
         const speedSlider = document.getElementById('speedSlider');
         speedSlider.addEventListener('input', (e) => {
             this.playbackSpeed = parseFloat(e.target.value);
             document.getElementById('speedValue').textContent = `${this.playbackSpeed}x`;
         });
 
-        // Transpose controls
-        document.getElementById('transposeUp').addEventListener('click', () => this.transpose(1));
-        document.getElementById('transposeDown').addEventListener('click', () => this.transpose(-1));
-        document.getElementById('resetTranspose').addEventListener('click', () => this.resetTranspose());
-
-        // Octave controls
-        document.getElementById('octaveUp').addEventListener('click', () => this.changeOctave(1));
-        document.getElementById('octaveDown').addEventListener('click', () => this.changeOctave(-1));
-        document.getElementById('resetOctave').addEventListener('click', () => this.resetOctave());
+        
 
         // Keyboard events
         document.addEventListener('keydown', (e) => this.handleKeyDown(e));
